@@ -1,0 +1,60 @@
+{'content_type': 'text', 
+    'message_id': 637, 
+    'from_user': {
+        'id': 427879765, 
+        'is_bot': False, 
+        'first_name': 'Наиль', 
+        'username': 'ferahar', 
+        'last_name': None, 
+        'language_code': 'ru'
+    }, 
+    'date': 1568882355, 
+    'chat': {
+        'type': 'group', 
+        'last_name': None, 
+        'first_name': None, 
+        'username': None, 
+        'id': -319782036, 
+        'title': 'Soccer team', 
+        'all_members_are_administrators': True, 
+        'photo': None, 
+        'description': None, 
+        'invite_link': None, 
+        'pinned_message': None, 
+        'sticker_set_name': None, 
+        'can_set_sticker_set': None
+    }, 
+    'forward_from_chat': None, 
+    'forward_from': None, 
+    'forward_date': None, 
+    'reply_to_message': None, 
+    'edit_date': None, 
+    'media_group_id': None, 
+    'author_signature': None, 
+    'text': '/cool', 
+    'entities': [<telebot.types.MessageEntity object at 0x7f61d614ba20>], 
+    'caption_entities': None, 'audio': None, 'document': None, 'photo': None, 'sticker': None, 'video': None, 'video_note': None, 'voice': None, 'caption': None, 'contact': None, 'location': None, 'venue': None, 'new_chat_member': None, 'new_chat_members': None, 'left_chat_member': None, 'new_chat_title': None, 'new_chat_photo': None, 'delete_chat_photo': None, 'group_chat_created': None, 'supergroup_chat_created': None, 'channel_chat_created': None, 'migrate_to_chat_id': None, 'migrate_from_chat_id': None, 'pinned_message': None, 'invoice': None, 'successful_payment': None, 'connected_website': None, 'json': {'message_id': 637, 'from': {'id': 427879765, 'is_bot': False, 'first_name': 'Наиль', 'username': 'ferahar', 'language_code': 'ru'
+        }, 'chat': {'id': -319782036, 'title': 'Soccer team', 'type': 'group', 'all_members_are_administrators': True
+        }, 'date': 1568882355, 'text': '/cool', 'entities': [
+            {'offset': 0, 'length': 5, 'type': 'bot_command'
+            }
+        ]
+    }
+}
+
+{   'caption_entities': None, 
+    'audio': None, 
+    'document': None, 
+    'photo': None, 
+    'sticker': None, 
+    'video': None, 
+    'video_note': None, 'voice': None, 'caption': None, 'contact': None, 'location': None, 
+    'venue': None, 'new_chat_member': None, 'new_chat_members': None, 'left_chat_member': None, 
+    'new_chat_title': None, 'new_chat_photo': None, 'delete_chat_photo': None, 
+    'group_chat_created': None, 'supergroup_chat_created': None, 'channel_chat_created': None, 
+    'migrate_to_chat_id': None, 'migrate_from_chat_id': None, 'pinned_message': None, 
+    'invoice': None, 'successful_payment': None, 'connected_website': None, 
+    'json': {
+        'message_id': 637, 
+        'from': {'id': 427879765, 'is_bot': False, 'first_name': 'Наиль', 'username': 'ferahar', 'language_code': 'ru'
+        }
