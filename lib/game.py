@@ -1,8 +1,11 @@
+# refactor DATA => GAME
+
 import redis, os, datetime, math, random, telebot
 from config import chat_id, master_id, members_count, emoji, answersBot, token
-from lib.access import master, onlyTeam, adminTeam
 from lib.tools import extract_count
 from mimesis import Person
+# decorators
+from lib.access import master, onlyTeam, adminTeam
 
 r = redis.from_url(os.environ.get("REDIS_URL"), decode_responses=True)
 bot = telebot.TeleBot(token)
@@ -33,22 +36,17 @@ def getGroups(message):
 
     print("---------- getlist ----------------")
     print(r.hgetall(game))
-
     members = getList(r.hgetall(game))
-    
     random.shuffle(emoji)
     count = len(members)
-    if count<=5: 
-        return "🤷🏻‍♂️ Недостаточно участников " 
+    if count<=5:
+        return "🤷🏻‍♂️ Недостаточно участников"
     elif count<(number*2):
         group_count = 2
     elif count>=(number*2):
         group_count = math.floor(len(members)/number)
-
     groupList = '<b>Команды:</b>\n\n'
-
     gameGroups = [ [] for i in range(group_count)]
-
     k = 0
     for member in members:
         gameGroups[k].append(member[0])

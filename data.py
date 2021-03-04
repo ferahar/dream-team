@@ -1,3 +1,4 @@
+# REMOVE after refactor DATA => GAME
 import redis, os, datetime, math, random
 
 from config import chat_id, master_id, members_count, emoji, answersBot
@@ -7,8 +8,8 @@ from mimesis import Person
 gen = Person('ru')
 r = redis.from_url(os.environ.get("REDIS_URL"), decode_responses=True)
 
+# decorators refactor to => access.py
 def master(f):
-    
     def wrapper(message, *args, **keyargs):
         if message.from_user.id in master_id:
             return f(message, *args, **keyargs)
@@ -16,9 +17,7 @@ def master(f):
             return False
     return wrapper
 
-
 def adminTeam(f):
-    
     def wrapper(message, *args, **keyargs):
         admin_list = bot.get_chat_administrators(message.chat.id)
         if message.from_user.id in getAdmin(admin_list):
@@ -37,9 +36,7 @@ def adminTeam2(admin_list):
         return wrapper
     return wrapOut
 
-
 def onlyTeam(f):
-    
     def wrapper(message, *args, **keyargs):
         if message.chat.id in chat_id:
             return f(message, *args, **keyargs)
@@ -108,7 +105,7 @@ def getMembersGroups(message):
                 groupList += f'{m+1}. {members[0]}\n'
                 del members[0]
         groupList += f'\n'
-    
+
     if len(members):
         groupList += f'👶🏼 <strong>Elite commando</strong> \n'
         for member in members:
@@ -137,9 +134,8 @@ def setMemberTemp(message):
     try:
         name = message.text.split()[1]
     except:
-        # name = gen.full_name()     
-        name = gen.name()     
-    
+        name = gen.name()
+
     user_id = gen.identifier('###')
     name = name + '(/km '+ user_id + ')'
     r.hset(chat, user_id, name)
@@ -153,8 +149,7 @@ def clearMember(message):
         # name = message.text.split()[2]
         r.hdel(chat,key)
     except:
-        return 'Участник не найден'     
-    
+        return 'Участник не найден'
     return f'Участник удален'
 
 
@@ -162,7 +157,6 @@ def clearMember(message):
 def clearData(message):
     chat = f'chat{message.chat.id}'
     r.delete(chat)
-    # r.flushdb()
     return "Ok 👍🏻"
 
 
@@ -171,7 +165,6 @@ def clearData(message):
 def setMemberList(message):
     count = extract_count(message.text)
     chat = f'chat{message.chat.id}'
-    # r.hset(chat, gen.identifier('########'), gen.full_name())
     for i in range(count):
         r.hset(chat, gen.identifier('########'), gen.full_name())
         i

@@ -4,9 +4,10 @@ import data
 
 from lib.answer import answerBot
 from lib.member import init as memberInit
-import lib.game as game
 from lib.get_members  import get_members
 
+# todo: refactor to data 
+import lib.game as game
 
 class MyBot(telebot.TeleBot):
 
@@ -91,12 +92,12 @@ def send_text(message):
     # end todo
     if message.text == '+':
         data.setMember(message)
-        # new add
+        # add new member
         member = memberInit(message)
         member.inGame()
     elif message.text == '-': 
         data.delMember(message)
-        # new add
+        # remove member
         member = memberInit(message)
         member.outGame()
     if text: 
