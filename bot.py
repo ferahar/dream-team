@@ -85,8 +85,10 @@ def setList(message):
 @bot.message_handler(content_types=["text"])
 def send_text(message):
     text = answerBot(message)
+    # todo: remove!!!
     print('🦁 => Chat id!')
     print(message.chat.id)
+    # end todo
     if message.text == '+':
         data.setMember(message)
         # new add
