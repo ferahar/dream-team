@@ -1,5 +1,6 @@
 # decorators
 import telebot
+
 from config import chat_id, master_id, token
 from lib.tools import getAdmin
 
