@@ -1,7 +1,7 @@
 # refactor DATA => GAME
 
 import redis, os, datetime, math, random, telebot
-from config import chat_id, master_id, members_count, emoji, answersBot, token
+from config import members_count, token, emoji
 from lib.tools import extract_count
 from mimesis import Person
 # decorators
