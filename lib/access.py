@@ -1,6 +1,6 @@
 # decorators
 import telebot
-from config import chat_id, master_id, members_count, emoji, answersBot, token
+from config import chat_id, master_id, members_count, emoji, answers_bot, token
 from lib.tools import getAdmin
 
 bot = telebot.TeleBot(token)
