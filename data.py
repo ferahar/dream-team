@@ -1,7 +1,7 @@
 # REMOVE after refactor DATA => GAME
 import redis, os, datetime, math, random
 
-from config import chat_id, master_id, members_count, emoji, answersBot
+from config import chat_id, master_id, members_count, emoji, answers_bot
 from bot import bot
 from mimesis import Person
 
