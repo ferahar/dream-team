@@ -1,2 +1,2 @@
 dream-team
-deploy HERKU
+deploy HEROKU
